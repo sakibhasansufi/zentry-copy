@@ -1,9 +1,39 @@
 import PropTypes from "prop-types";
+import { useRef, useState } from "react";
 import { TiLocationArrow } from "react-icons/ti";
 
 
 
-export const Bentotilt = () => {
+export const Bentotilt = ({ children, className = '' }) => {
+    const [transformStyle, setTransformStyle] = useState("");
+    const itemRef = useRef(null);
+
+    const handleMouseMove = (e) => {
+        if (!itemRef.current) return;
+
+        const { left, top, width, height } = itemRef.current.getBoundingClientRect();
+
+        const relativeX = (e.clientX - left) / width;
+        const relativeY = (e.clientY - top) / height;
+
+        const tiltX = (relativeY - 0.5) * 10;
+        const tiltY = (relativeX - 0.5) * -10;
+        const newTransform = `perspective(700px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(.90, .95, .95)`;
+        setTransformStyle(newTransform);
+    };
+
+    const handleMouseLeave = () => {
+        setTransformStyle('');
+    }
+    return (
+        <div ref={itemRef}
+            className={className}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{ transform: transformStyle }}>
+            {children}
+        </div>
+    )
 
 };
 
@@ -46,7 +76,7 @@ const Features = () => {
                     </p>
                 </div>
 
-                <div className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
+                <Bentotilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
                     <BentoCard
                         src="video/feature-1.mp4"
                         title={
@@ -58,11 +88,11 @@ const Features = () => {
                         isComingSoon
 
                     />
-                </div>
+                </Bentotilt>
 
 
                 <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-7">
-                    <div className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
+                    <Bentotilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
                         <BentoCard
                             src="video/feature-2.mp4"
                             title={
@@ -73,10 +103,10 @@ const Features = () => {
                             description="An anime and gaming-inspired NFT collection - the IP primed for expansion."
                             isComingSoon
                         />
-                    </div>
+                    </Bentotilt>
 
 
-                    <div className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
+                    <Bentotilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
                         <BentoCard
                             src="video/feature-3.mp4"
                             title={
@@ -87,10 +117,10 @@ const Features = () => {
                             description="A gamified social hub, adding a new dimension of play to social interaction for Web3 communities."
                             isComingSoon
                         />
-                    </div>
+                    </Bentotilt>
 
 
-                    <div className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
+                    <Bentotilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
                         <BentoCard
                             src="video/feature-4.mp4"
                             title={
@@ -101,7 +131,7 @@ const Features = () => {
                             description="A cross-world AI Agent - elevating your gameplay to be more fun and productive."
                             isComingSoon
                         />
-                    </div>
+                    </Bentotilt>
 
 
                     <div className="bento-tilt_2">
@@ -146,6 +176,17 @@ BentoCard.defaultProps = {
     title: '',
     description: '',
     isComingSoon: true
+};
+
+
+Bentotilt.propTypes = {
+    children: PropTypes.node.isRequired,
+    className: PropTypes.string
+};
+
+Bentotilt.defaultProps = {
+    children: '',
+    className: ''
 }
 
 export default Features;
