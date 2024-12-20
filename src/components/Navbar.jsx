@@ -6,7 +6,7 @@ import { useWindowScroll } from "react-use";
 import gsap from "gsap";
 
 
-const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"];
+const navItems = [ "About", "Story", "Contact"];
 const Navbar = () => {
     const navContainerRef = useRef(null);
     const audioElementRef = useRef(null);
@@ -61,7 +61,7 @@ const Navbar = () => {
             <header className="absolute top-1/2 w-full -translate-y-1/2">
                 <nav className="flex size-full items-center justify-center p-4">
                     <div className="flex items-center gap-7">
-                        <img src="/image/logo.png" alt="logo" className="w-10" />
+                        <img src="/image/pubg.jpg" alt="logo" className="w-10" />
                         <Button
                             id='product-button'
                             title='products'

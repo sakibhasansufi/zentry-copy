@@ -39,7 +39,7 @@ export const Bentotilt = ({ children, className = '' }) => {
 
 
 
-export const BentoCard = ({ src, title, description, isComingSoon }) => {
+export const BentoCard = ({ src, title, description }) => {
     return (
         <div className="relative size-full">
             <video
@@ -53,7 +53,7 @@ export const BentoCard = ({ src, title, description, isComingSoon }) => {
                 <div>
                     <h1 className="bento-title special-font">{title}</h1>
                     {description && (
-                        <p className="mt-3 max-w-64 text-xs md:text-base">{description}</p>
+                        <p className="mt-3 max-w-64 text-xs md:text-base text-justify text-gray-400">{description}</p>
                     )}
                 </div>
             </div>
@@ -67,75 +67,73 @@ const Features = () => {
             <div className="container mx-auto px-3 md:px-10">
                 <div className="px-5 py-32">
                     <p className="font-circular-web text-lg text-blue-50">
-                        Into the Meta game layer
+                        Into the Multiplayer Battle Game
                     </p>
                     <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-50">
-                        Immerse yourself in a rich and ever-expanding universe where a vibrant
-                        array of products converge into an interconnected overlay experience
-                        on your world.
+                        Whether you&apos;re a seasoned pro or a newcomer to the battle royale genre, PUBG offers an unforgettable gaming experience.
                     </p>
                 </div>
 
                 <Bentotilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
                     <BentoCard
-                        src="video/feature-1.mp4"
+                        src="video/vid-1.mp4"
                         title={
                             <>
-                                radia<b>n</b>t
+                                p<b>u</b>bg
                             </>
                         }
-                        description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into a rewarding adventure."
-                        isComingSoon
+                        description="PUBG Mobile[a] is a free-to-play battle royale video game co-developed by LightSpeed & Quantum Studio and PUBG Studios. It is a mobile game adaptation of PUBG: Battlegrounds"
+
 
                     />
                 </Bentotilt>
 
 
-                <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-7">
+                <div className="grid h-[120vh] w-full grid-cols-2 grid-rows-3 gap-7">
                     <Bentotilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
                         <BentoCard
-                            src="video/feature-2.mp4"
+                            src="video/feature-1.mp4"
                             title={
                                 <>
-                                    zig<b>m</b>a
+                                    dra<b>c</b>ula
                                 </>
                             }
-                            description="An anime and gaming-inspired NFT collection - the IP primed for expansion."
-                            isComingSoon
+                            description="Immerse yourself in the legendary war that ruined the landscape. The world versus an evil entity that strikes fear into every living being, Dracula."
+
                         />
                     </Bentotilt>
 
 
                     <Bentotilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
                         <BentoCard
-                            src="video/feature-3.mp4"
+                            src="video/feature-2.mp4"
                             title={
                                 <>
-                                    n<b>e</b>xus
+                                    ph<b>a</b>r<b>a</b>oh
                                 </>
                             }
-                            description="A gamified social hub, adding a new dimension of play to social interaction for Web3 communities."
-                            isComingSoon
+                            description="The story of the Ancient Secret continues with Pharaoh and Iridescence joining the fray! "
+
                         />
                     </Bentotilt>
 
 
                     <Bentotilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
                         <BentoCard
-                            src="video/feature-4.mp4"
+                            src="video/feature-3.mp4"
                             title={
                                 <>
-                                    az<b>u</b>l
+                                    a<b>n</b>na
                                 </>
                             }
-                            description="A cross-world AI Agent - elevating your gameplay to be more fun and productive."
+                            description="Anna is primarily cosmetic, offering unique appearances and voice lines without affecting game play mechanics."
                             isComingSoon
                         />
                     </Bentotilt>
 
 
                     <div className="bento-tilt_2">
-                        <div className="flex size-full flex-col justify-between bg-violet-300 p-5">
+                        <div className="flex size-full flex-col justify-between bg-[#30ce1a] p-5">
                             <h1 className="bento-title special-font max-w-64 text-black">
                                 M<b>o</b>re co<b>m</b>ing s<b>o</b>on.
                             </h1>
@@ -146,7 +144,7 @@ const Features = () => {
 
                     <div className="bento-tilt_2">
                         <video
-                            src="video/feature-5.mp4"
+                            src="video/feature-4.mp4"
                             loop
                             muted
                             autoPlay

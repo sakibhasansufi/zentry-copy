@@ -14,37 +14,34 @@ const Contact = () => {
       <div className="relative rounded-lg bg-black py-24 text-blue-50 sm:overflow-hidden">
         <div className="absolute -left-20 top-0 hidden h-full w-72 overflow-hidden sm:block lg:left-20 lg:w-96">
           <ImageClipBox
-            src="/image/contact-1.webp"
+            src="/image/zombie.jpg"
             clipClass="contact-clip-path-1"
           />
           <ImageClipBox
-            src="/image/contact-2.webp"
+            src="/image/female.jpg"
             clipClass="contact-clip-path-2 lg:translate-y-40 translate-y-60"
           />
         </div>
 
-        <div className="absolute -top-40 left-20 w-60 sm:top-1/2 md:left-auto md:right-10 lg:top-20 lg:w-80">
+        <div className="absolute -top-40 sm:hidden md:block left-20 w-60 sm:top-10 md:left-auto md:right-10 lg:top-40 lg:w-[300px]">
+          
           <ImageClipBox
-            src="/image/swordman-partial.webp"
-            clipClass="absolute md:scale-125"
-          />
-          <ImageClipBox
-            src="/image/swordman.webp"
+            src="/image/helmet.jpg"
             clipClass="sword-man-clip-path md:scale-125"
           />
         </div>
 
         <div className="flex flex-col items-center text-center">
           <p className="mb-10 font-general text-[10px] uppercase">
-            Join Zentry
+            Join PUBG Now
           </p>
 
           <AnimatedTitle
-            title="let&#39;s b<b>u</b>ild the <br /> new era of <br /> g<b>a</b>ming t<b>o</b>gether."
+            title="let&#39;s pl<b>a</b>y with <br /> your friends  <br /> to<b>ge</b>ther <b>to</b>gether."
             className="special-font !md:text-[6.2rem] w-full font-zentry !text-5xl !font-black !leading-[.9]"
           />
 
-          <Button title="contact us" containerClass="mt-10 cursor-pointer" />
+          <Button title="play now" containerClass="mt-10 cursor-pointer" />
         </div>
       </div>
     </div>
